@@ -346,7 +346,7 @@ impl<'a> Cube<'a> {
   /// Find all of the inside corners in the overview, because those represent the ends of the
   /// cuts that flattened the cube. Return a list of JoinIterators that will cover the
   /// perimeter.
-  fn find_inside_corners(&self) -> Vec<JoinIterator> {
+  fn find_inside_corners(&self) -> Vec<JoinIterator<'_>> {
     let mut result = Vec::new();
     for y in 0..self.overview_size.1 {
       for x in 0..self.overview_size.0 {
